@@ -1,0 +1,48 @@
+{
+  "args": {
+    "data_dir": "preprocessed_data_hy",
+    "use_test_for_final": true,
+    "spm_model": "preprocessed_data_hy/spm_en.model",
+    "rnn_type": "gru",
+    "attn": "additive",
+    "emb_dim": 256,
+    "hidden_dim": 512,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "teacher_forcing_ratio": 1.0,
+    "epochs": 10,
+    "batch_size": 128,
+    "lr": 0.001,
+    "grad_clip": 1.0,
+    "device": "cuda",
+    "decode": "beam",
+    "beam_size": 5,
+    "max_decode_len": 60,
+    "save_dir": "runs_rnn_nmt",
+    "run_name": "",
+    "seed": 42
+  },
+  "preprocess_cfg": {
+    "max_len": 60,
+    "min_len": 1,
+    "truncate": true,
+    "zh_min_freq": 2,
+    "en_min_freq": 2,
+    "zh_max_vocab": 50000,
+    "en_max_vocab": 50000,
+    "train_path": "./data_hy\\train_mixed_v2.jsonl",
+    "valid_path": "./data_hy\\valid_retranslated_hunyuan.jsonl",
+    "test_path": "./data_hy\\test_retranslated_hunyuan.jsonl",
+    "seed": 42
+  },
+  "vocab_sizes": {
+    "zh": 20454,
+    "en": 15041
+  },
+  "special_ids": {
+    "zh_pad": 0,
+    "en_pad": 0,
+    "en_bos": 2,
+    "en_eos": 3
+  }
+}
